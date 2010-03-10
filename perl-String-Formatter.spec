@@ -1,5 +1,5 @@
 %define upstream_name    String-Formatter
-%define upstream_version 0.093221
+%define upstream_version 0.100680
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
