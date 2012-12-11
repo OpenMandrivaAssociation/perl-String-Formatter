@@ -1,20 +1,20 @@
 %define upstream_name    String-Formatter
 %define upstream_version 0.102082
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Ways to put String::Formatter to use
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/String/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Ways to put String::Formatter to use
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/String/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Params::Util)
-BuildRequires: perl(Sub::Exporter)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Params::Util)
+BuildRequires:	perl(Sub::Exporter)
+BuildArch:	noarch
 
 %description
 String::Formatter is a tool for building sprintf-like formatting routines.
@@ -35,24 +35,53 @@ returns a new string:
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.102.82-2mdv2011.0
++ Revision: 656967
+- rebuild for updated spec-helper
+
+* Fri Nov 12 2010 Jérôme Quelin <jquelin@mandriva.org> 0.102.82-1mdv2011.0
++ Revision: 596650
+- update to 0.102082
+
+* Thu Jul 29 2010 Jérôme Quelin <jquelin@mandriva.org> 0.102.80-1mdv2011.0
++ Revision: 563001
+- update to 0.102080
+
+* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 0.101.620-1mdv2011.0
++ Revision: 552634
+- update to 0.101620
+
+* Mon Mar 15 2010 Jérôme Quelin <jquelin@mandriva.org> 0.100.720-1mdv2010.1
++ Revision: 519957
+- update to 0.100720
+
+* Thu Mar 11 2010 Jérôme Quelin <jquelin@mandriva.org> 0.100.690-1mdv2010.1
++ Revision: 518084
+- update to 0.100690
+
+* Wed Mar 10 2010 Jérôme Quelin <jquelin@mandriva.org> 0.100.680-1mdv2010.1
++ Revision: 517307
+- update to 0.100680
+
+* Thu Nov 26 2009 Jérôme Quelin <jquelin@mandriva.org> 0.93.221-1mdv2010.1
++ Revision: 470288
+- import perl-String-Formatter
 
 
+* Thu Nov 26 2009 cpan2dist 0.093221-1mdv
+- initial mdv release, generated with cpan2dist
