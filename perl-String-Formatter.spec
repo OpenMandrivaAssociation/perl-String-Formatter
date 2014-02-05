@@ -1,15 +1,15 @@
 %define upstream_name    String-Formatter
-%define upstream_version 0.102082
+%define upstream_version 0.102084
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	1
 
 Summary:	Ways to put String::Formatter to use
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/String/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/String/String-Formatter-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	perl-devel
@@ -86,3 +86,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Thu Nov 26 2009 cpan2dist 0.093221-1mdv
 - initial mdv release, generated with cpan2dist
+
