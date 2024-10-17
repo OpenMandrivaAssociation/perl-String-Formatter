@@ -8,7 +8,7 @@ Release:	3
 Summary:	Ways to put String::Formatter to use
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/String/String-Formatter-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
