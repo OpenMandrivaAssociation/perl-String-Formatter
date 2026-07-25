@@ -1,15 +1,15 @@
 %define upstream_name    String-Formatter
-%define upstream_version 0.102084
+%define upstream_version 1.235
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Ways to put String::Formatter to use
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/String/String-Formatter-%{upstream_version}.tar.gz
+Url:		https://github.com/rjbs/String-Formatter
+Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/String-Formatter-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	make
